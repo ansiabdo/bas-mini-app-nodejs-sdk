@@ -1,0 +1,42 @@
+{
+  "name": "bas-mini-app-nodejs-sdk",
+  "version": "1.2.0",
+  "description": "A Node client SDK for interacting with basgate's Mini App on basgate",
+  "main": "index.js",
+  "scripts": {
+    "docs": ".\\node_modules\\.bin\\jsdoc package.json index.js clients lib config README.md -d docs",
+    "docs2": "rm -rf ./docs && ./node_modules/.bin/jsdoc package.json index.js clients/** lib/** config/** README.md -d docs",
+    "lint": ".\\node_modules\\.bin\\jshint .",
+    "coverage": "/node_modules/.bin/nyc --reporter=html npm test",
+    "prepare": "npm run lint && npm run docs",
+    "prepublishOnly": "rm -rf ./node_modules/ && npm install && npm test"
+  },
+  "engines": {
+    "node": ">=8.17.0"
+  },
+  "author": "basgate",
+  "homepage": "https://basgate.com",
+  "dependencies": {
+    "debug": "~4.1.1",
+    "moment": "~2.24.0",
+    "request": "~2.88.2",
+    "request-promise": "~4.2.5",
+    "uuid": "~7.0.3"
+  },
+  "devDependencies": {
+    "chai": "~4.2.0",
+    "chai-as-promised": "~7.1.1",
+    "jsdoc": "~3.6.3",
+    "jshint": "~2.11.0",
+    "mocha": "~7.1.1",
+    "nock": "~12.0.3",
+    "nyc": "~15.0.1",
+    "sinon": "~9.0.1"
+  },
+  "files": [
+    "index.js",
+    "clients/",
+    "config/",
+    "lib/"
+  ]
+}
