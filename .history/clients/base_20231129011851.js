@@ -9,7 +9,7 @@ const LibUtils = require('../lib').utils;
 /**
  * @class
  */
-class    Base {
+class Base {
     /**
      * 
      * Constructor for our base client class. This class is used to act as a base layer for all HTTP calls. It uses the request promise module to achieve the same. This class is primaraly meant to act as a base class which can be further extended to build clients for third party APIs.

@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "docs": ".\\node_modules\\.bin\\jsdoc package.json index.js clients lib config README.md -d docs",
-    "docs2": "rm -rf ./docs && ./node_modules/.bin/jsdoc package.json index.js clients/** lib/** config/** README.md -d docs",
+    "docs2": "rmdir -r docs && .\\node_modules\\.bin\\jsdoc package.json index.js clients lib config README.md -d docs",
     "lint": ".\\node_modules\\.bin\\jshint .",
-    "coverage": "/node_modules/.bin/nyc --reporter=html npm test",
     "prepare": "npm run lint && npm run docs",
-    "prepublishOnly": "rm -rf ./node_modules/ && npm install && npm test"
+    "prepublishOnly": "rm -rf .\\node_modules && npm install"
   },
   "engines": {
     "node": ">=8.17.0"

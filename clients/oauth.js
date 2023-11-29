@@ -15,23 +15,12 @@ class Oauth extends Base {
      * 
      * Constructor for our Oauth client class. It expects following parameters :
      * 
-     * @param {Object} authOpts - Following are supported and may be passed as auth options :
-     * @param {String} authOpts.clientId - oauth clientId provided on onboarding.
-     * @param {String} authOpts.clientSecret - oauth clientSecret provided on onboarding.
+     * @param {String} clientId - oauth clientId provided on onboarding.
      * 
-     * @param {Object} httpOpts - Following are supported and may be passed as http options :
-     * @param {String} httpOpts.ENDPOINT - Hostname / Endpoint for all our client requests
-     * @param {...any} [httpOpts.args] - Any arguments which needs to be passed as options to the parent class' constructor. For more details, refer to Base class' documentation.
      *
      * @see Base
      */
-    constructor({
-        clientId,
-        clientSecret
-    }, {
-        ENDPOINT,
-        ...args //jshint ignore:line
-    }) {
+    constructor(clientId) {
         super({
             ENDPOINT,
             TIMEOUT: 5 * 1000,
@@ -49,7 +38,6 @@ class Oauth extends Base {
         }
 
         this.clientId = clientId;
-        this.clientSecret = clientSecret;
     }
 
     /**
